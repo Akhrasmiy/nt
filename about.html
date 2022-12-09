@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="text" placeholder="mevani kiriting" class="matrix">
+    <button type="button"onclick="getInputValue();"> tekshirish</button>
+    <p id="natija"></p>
+    <a href="./form.html">3-ishni korish un</a>
+    <script>
+         function getInputValue() {
+        let elements = document.getElementsByClassName("matrix")[0].value;
+        let element=elements.toLowerCase();
+        let natija = document.getElementById("natija");
+        switch (element) {
+            case "anor":
+            case "behi":
+            case "olma":
+            case "gilos":
+            case "nok":
+            case "orik":
+                natija.innerHTML = "ha ajoyib meva"
+                break;
+            default:natija.innerHTML = "yoq"
+                break;
+           
+        }
+    }
+    </script>
+</body>
+
+</html>

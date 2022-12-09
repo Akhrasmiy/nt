@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+    <div>
+        <form action="">
+            <textarea name="" id="" cols="30" rows="10" class="string" placeholder="matnni kiriting"></textarea>
+            <br>
+            <input type="text" placeholder="search text" id="inputId" class="search-text">
+            <button type="button" onclick="getInputValue();">search-text</button>
+        </form>
+
+        <p id="natija"></p>
+        <div class="answer">
+            <div class="box-true yichim">Siz qidirgan soz mavjud</div>
+            <div class="box-false yichim">Siz qidirgan soz mavjud emas</div>
+        </div>
+    </div>
+    <a href="./about.html">2-sahifaga otish un bosing</a>
+    <script>
+        function getInputValue() {
+            let inputtext = document.getElementsByClassName("string")[0].value;
+            let inputSearchText = document.getElementsByClassName("search-text")[0].value;
+            let text=inputtext.toLowerCase()
+            let searchText=inputSearchText.toLowerCase();
+            let value = text.indexOf(searchText);
+            let natija = document.getElementById("natija");
+            if (value > -1) {
+                natija.innerHTML = "ha"
+                let trueValue = document.getElementsByClassName("box-true");
+                trueValue.classList.remove("yichim");
+            }
+            else {
+                natija.innerHTML="yoq"
+                let falseValue = document.getElementsByClassName("box-false");
+                falseValue.classList.remove("yichim");
+            }
+
+
+
+        }
+    </script>
+</body>
+
+</html>

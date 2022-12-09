@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form action="/" id="form">
+        <h1 class="acount">Create your Google Acount</h1>
+
+        <label for="name">FirstName</label>
+        <input type="text" name="name" id="firstname" placeholder="First name">
+        <label for="name">LastName</label>
+        <input type="text" name="name" id="lastname" placeholder="Last name">
+
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="                                                                                                                           
+@gmail.com">
+
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="password">
+        <br>
+        <label for="repassword">RePasword</label>
+        <input type="password" name="repassword" id="repassword" placeholder="repassword">
+        <p class="answer"></p>
+        
+        <input type="submit" value="Confirm" id="btn">
+
+    </form>
+    <script>
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            let frstname = document.getElementById('firstname').value
+            let lastname = document.getElementById('lastname').value
+            let email = document.getElementById('email').value
+            let password = document.getElementById('password').value;
+            let repassword = document.getElementById('repassword').value;
+
+            let answer = document.querySelector('.answer')
+           
+
+
+            if (frstname === "" || lastname === "" || email === "" || password === "" ||password!==repassword) {
+                answer.innerHTML = ("Xatolik bor, ma'lumotlarni to'g'iri kiriting.")
+            }
+            else {
+                answer.innerHTML = ("Ma'lumotlarni to'gri kiritdinggiz.")
+            }
+        })
+    </script>
+</body>
+
+</html>
